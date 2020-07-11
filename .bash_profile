@@ -26,13 +26,24 @@ fortune | cowsay -f tux
 
 # Custom functions ----------------
 
-function mkcd()
+mkcd()
 {
 	mkdir $1 && cd $1
+}
+
+cdp()
+{
+	TEMP_PWD='pwd'
+	while ! [ -d .git ]; do
+	cd ..
+	done
+	OLDPWD=$TEMP_PWD
 }
 
 # Aliases -------------------------
 
 alias uu='brew update && brew upgrade'
 alias ll='ls -al'
- 
+alias ..='cd ../..'
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
