@@ -29,7 +29,7 @@ insert_emoji()
     done
     
     if [[ $is_in_repa == 1 ]]; then
-        echo "🔧 "
+        echo "🔧  "
     fi
 }
 
