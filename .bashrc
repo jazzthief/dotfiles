@@ -1,14 +1,23 @@
-# UBUNTU BASH CONFIG ------------------------------------------
-
+# WSL2 Debian config ------------------------------------------
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If not running interactively, don't do anything
+# PATH modifications
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="$PATH:$HOME/toolz/flutter/bin"
+export GPG_TTY=$(tty)
+
+#If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
+
+# Change start directory for WSL systems
+cd ~
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -123,7 +132,7 @@ cdp()
 # Bash prompt stuff ----------------
 
 if [ "$color_prompt" = yes ]; then
-    PS1="\$(insert_emoji)\[\033[97m\]\u@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] \$ "
+    PS1="\[\033[97m\]\u@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] \$ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -150,6 +159,7 @@ esac
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias uu='sudo apt-get update && sudo apt-get upgrade'
+alias penv='source `poetry env info --path`/bin/activate'
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -al'
@@ -168,3 +178,4 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
