@@ -1,3 +1,5 @@
+# MacOS Debian config ------------------------------------------
+
 export LC_ALL=en_US.UTF-8
 export CLICOLOR=1
 export PATH="/usr/local/sbin:$PATH"
