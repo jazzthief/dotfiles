@@ -4,11 +4,9 @@
 # for examples
 
 # PATH modifications
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-export PATH="$PATH:$HOME/toolz/flutter/bin"
 
+export PATH="$HOME/.local/bin:$PATH"
+# for gpg password input to work properly w/o gui
 export GPG_TTY=$(tty)
 
 #If not running interactively, don't do anything
