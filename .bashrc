@@ -131,7 +131,7 @@ cdp()
 # Bash prompt stuff ----------------
 
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\033[97m\]\u@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] \$ "
+    PS1="\[\033[97m\]\u@\h\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n\$ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
