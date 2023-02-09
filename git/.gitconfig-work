@@ -1,0 +1,6 @@
+[user]
+	email = yahor.statkevich@godeltech.com
+	name = Yegor
+	signingkey = 25A634504C9CCE9E
+[commit]
+	gpgsign = true
