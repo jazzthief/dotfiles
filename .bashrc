@@ -9,6 +9,13 @@ export PATH="$HOME/.local/bin:$PATH"
 # for gpg password input to work properly w/o gui
 export GPG_TTY=$(tty)
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
+
 #If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -81,8 +88,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # Custom functions ----------------
 
