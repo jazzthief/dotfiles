@@ -4,5 +4,3 @@
 	signingkey = 650DC0A0E6B6947C
 [commit]
 	gpgsign = true
-[include]
-	path = ~/.gitconfig-work
