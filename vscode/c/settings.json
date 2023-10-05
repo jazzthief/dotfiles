@@ -1,0 +1,6 @@
+{
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.ignoreSelection": true
+}
