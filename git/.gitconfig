@@ -4,3 +4,7 @@
 	signingkey = 650DC0A0E6B6947C
 [commit]
 	gpgsign = true
+[credential] 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
